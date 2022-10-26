@@ -112,7 +112,8 @@ class Model:
             image_matrix_processed = np.mean(image_matrix / 255,
                                              axis=2).flatten()
             pred = self.__forward_propagation(image_matrix_processed)
-            print(Model.softmax(pred))
+            print()
+            print(np.argmax(pred))
 
     def load_images(self, folder_path: str, label: int):
         y = Model.vectorize(label)
